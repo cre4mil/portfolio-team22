@@ -12,6 +12,7 @@
         <div id="hero"></div>
         <div id="footer"></div>
         <script>
+// ฟังก์ชนสำหรับโหลด component
 async function loadComponent(url, targetId) {
 try {
 const response = await fetch(url);
@@ -21,11 +22,11 @@ document.getElementById(targetId).innerHTML = html;
 console.error(`Error loading ${url}:`, error);
 }
 }
-
+// โหลดทุก components
 document.addEventListener('DOMContentLoaded', () => {
-loadComponent('./components/navbar/index.html', 'navbar');
-loadComponent('./components/hero/index.html', 'hero');
-loadComponent('./components/footer/index.html', 'footer');
+loadComponent('/component/navbar/index.html', 'navbar');
+loadComponent('/component/hero/index.html', 'hero');
+loadComponent('/component/footer/index.html', 'footer');
 });
 </script>
     </body>
