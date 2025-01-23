@@ -56,7 +56,7 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="fixed top-0 left-0 w-full bg-primary text-white z-10 flex flex-col divide-y divide-accent1 hidden">
+            class="fixed top-0 left-0 w-full bg-primary text-white z-10 hidden flex-col divide-y divide-accent1">
             <a href="#home"
                 class="py-3 px-6 text-lg font-medium hover:bg-secondary transition duration-300">Home</a>
             <a href="#about"
@@ -74,18 +74,18 @@
             const mobileMenu = document.getElementById('mobile-menu');
 
             mobileMenuToggle.addEventListener('click', (event) => {
-                event.stopPropagation(); // ป้องกันการคลิกไปยังเอกสารด้านนอก
+                event.stopPropagation();
                 mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
             });
 
-            // ปิดเมนูเมื่อกดลิงก์
             mobileMenu.addEventListener('click', (event) => {
                 if (event.target.tagName === 'A') {
                     mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
                 }
             });
 
-            // ปิดเมนูเมื่อคลิกนอกเมนู
             document.addEventListener('click', (event) => {
                 if (
                     !mobileMenu.classList.contains('hidden') &&
@@ -93,6 +93,7 @@
                     event.target !== mobileMenuToggle
                 ) {
                     mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
                 }
             });
         });
