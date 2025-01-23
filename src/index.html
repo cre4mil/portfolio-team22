@@ -10,13 +10,8 @@
     <body>
         <div id="navbar"></div>
         <div id="hero"></div>
-        <div id="about"></div>
-        <div id="skills"></div>
-        <div id="projects"></div>
-        <div id="contact"></div>
         <div id="footer"></div>
         <script>
-// ฟังก์ชนสำหรับโหลด component
 async function loadComponent(url, targetId) {
 try {
 const response = await fetch(url);
@@ -26,15 +21,11 @@ document.getElementById(targetId).innerHTML = html;
 console.error(`Error loading ${url}:`, error);
 }
 }
-// โหลดทุก components
+
 document.addEventListener('DOMContentLoaded', () => {
-loadComponent('/components/navbar/index.html', 'navbar');
-loadComponent('/components/hero/index.html', 'hero');
-loadComponent('/components/about/index.html', 'about');
-loadComponent('/components/skills/index.html', 'skills');
-loadComponent('/components/projects/index.html', 'projects');
-loadComponent('/components/contact/index.html', 'contact');
-loadComponent('/components/footer/index.html', 'footer');
+loadComponent('./components/navbar/index.html', 'navbar');
+loadComponent('./components/hero/index.html', 'hero');
+loadComponent('./components/footer/index.html', 'footer');
 });
 </script>
     </body>

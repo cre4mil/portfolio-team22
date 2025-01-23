@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <div id="about"></div>
+        <div id="skills"></div>
+        <div id="footer"></div>
+        <script>
+      async function loadComponent(url, targetId) {
+      try {
+      const response = await fetch(url);
+      const html = await response.text();
+      document.getElementById(targetId).innerHTML = html;
+      } catch (error) {
+      console.error(`Error loading ${url}:`, error);
+      }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+      loadComponent('./component/navbar/index.html', 'navbar');
+      loadComponent('./component/about/index.html', 'about');
+      loadComponent('./component/skills/index.html', 'skills');
+      loadComponent('./component/footer/index.html', 'footer');
+      });
+    </script>
+    </body>
+</html>
