@@ -1,80 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Professional Portfolio</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#433878',
-                        'secondary': '#7E60BF',
-                        'accent1': '#E4B1F0',
-                        'accent2': '#FFE1FF'
-                    }
-                }
-            }
-        }
-    </script>
-    </head>
-    <body
-        class="bg-accent2 text-primary font-sans leading-normal tracking-normal">
-        <!-- About Section -->
-        <section id="about" class="py-16 px-4 bg-white">
-            <div
-                class="max-w-4xl mx-auto flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:mr-8">
-                    <h2 class="text-3xl font-bold mb-4 text-secondary">About
-                        Me</h2>
-                    <p class="text-primary mb-4">
-                        "สวัสดีค่ะ ดิฉัน วรวัตร พิลึกนา หรือ ฟรีมมี่ ปัจจุบันอายุ 20 ปี เป็นนักศึกษาปีที่ 3 สาขาเทคโนโลยีสารสนเทศเพื่ออุตสาหกรรมดิจิทัล คณะวิทยาการสารสนเทศ มหาวิทยาลัยบูรพา นอกเหนือจากการเรียน ดิฉันยังดำรงตำแหน่ง ประธานสาขาเทคโนโลยีสารสนเทศ รุ่นที่ 24 และ รองนายกสโมสรนิสิตคณะวิทยาการสารสนเทศ ปีการศึกษา 2567 รวมถึงเป็น หัวหน้าฝ่ายคทากรของคณะดิฉันสนใจเทคโนโลยี การออกแบบเว็บไซต์ และการพัฒนาศักยภาพส่วนตัว ผ่านการทำกิจกรรมและการเป็นผู้นำทีมในโอกาสต่างๆ เป้าหมายของผมคือการนำความรู้และประสบการณ์มาสร้างสรรค์สิ่งใหม่ๆ ที่เป็นประโยชน์ทั้งในชีวิตส่วนตัวและการทำงานในอนาคต"
-                    </p>
-                    <a class="text-secondary">คำคมประจำใจ:
-                        "สวย มั่นใจ ไม่กลัว ไม่ลอง ไม่รู้"</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-purple-900 font-roboto">
+    <section id="about" class="py-12 px-4">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <h2 class="text-2xl font-bold text-purple-600 mb-8">About Me</h2>
+            <div class="w-full flex flex-col items-center mb-8">
+                <p class="mb-4">
+                    สวัสดีค่ะ ดิฉัน วรวัตร พิลึกนา หรือ ฟรีมมี่ ปัจจุบันอายุ 20 ปี เป็นนักศึกษาปีที่ 3 สาขาเทคโนโลยีสารสนเทศเพื่ออุตสาหกรรมดิจิทัล คณะวิทยาการสารสนเทศ มหาวิทยาลัยบูรพา นอกเหนือจากการเรียน ดิฉันยังดำรงตำแหน่ง ประธานสาขาเทคโนโลยีสารสนเทศ รุ่นที่ 24 และ รองนายกสโมสรนิสิตคณะวิทยาการสารสนเทศ ปีการศึกษา 2567 รวมถึงเป็น หัวหน้าฝ่ายคทากรของคณะ ดิฉันสนใจเทคโนโลยี การออกแบบเว็บไซต์ และการพัฒนาศักยภาพส่วนตัว ผ่านการทำกิจกรรมและการเป็นผู้นำทีมในโอกาสต่างๆ เป้าหมายของผมคือการนำความรู้และประสบการณ์มาสร้างสรรค์สิ่งใหม่ๆ ที่เป็นประโยชน์ทั้งในชีวิตส่วนตัวและการทำงานในอนาคต
+                </p>
+                <p class="mb-4">คำคมประจำใจ: "สวย มั่นใจ ไม่กลัว ไม่ลอง ไม่รู้"</p>
+            </div>
+            <h2 class="text-2xl font-bold text-purple-600 mb-8">Education</h2>
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg text-center shadow-md">
+                    <img src="/src/component/about/ตราโรงเรียนชุมชนวัดราษฎร์บำรุง.jpg" alt="ตราโรงเรียนชุมชนวัดราษฎร์บำรุง" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-purple-900 mb-2">Primary Education</h3>
+                    <p class="text-purple-600">โรงเรียนชุมชนวัดราษฎร์บำรุง</p>
                 </div>
-                <!-- EDU Section -->
-                <div class="md:w-1/2 grid grid-cols-20 gap-4">
-                    <h3
-                        class="text-2xl font-bold text-primary">ประวัติการศึกษา</h3>
-                    <div
-                        class="bg-accent2 p-6 rounded-lg text-center flex flex-col items-center">
-                        <h3
-                            class="text-2xl font-bold text-primary">ระดับชั้นประถมศึกษา</h3>
-                        <img
-                            src="/src/component/about/ตราโรงเรียนชุมชนวัดราษฎร์บำรุง.jpg"
-                            alt="ตราโรงเรียนชุมชนวัดราษฎร์บำรุง"
-                            class="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full">
-                        <p
-                            class="text-secondary">โรงเรียนชุมชนวัดราษฎร์บำรุง</p>
-                    </div>
-                    <div
-                        class="bg-accent2 p-6 rounded-lg text-center flex flex-col items-center">
-                        <h3
-                            class="text-2xl font-bold text-primary">ระดับชั้นมัธยมศึกษา</h3>
-                        <img src="/src/component/about/ตราโรงเรียน นมร สกส.jpg"
-                            alt="ตราโรงเรียน นมร สกส"
-                            class="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full">
-                        <p class="text-secondary">โรงเรียนนวมินทราชินูทิศ
-                            สวนกุหลาบวิทยาลัย สมุทรปราการ</p>
-                    </div>
-                    <div
-                        class="bg-accent2 p-6 rounded-lg text-center flex flex-col items-center">
-                        <h3
-                            class="text-2xl font-bold text-primary">ปัจจุบัน</h3>
-                        <img src="/src/component/about/ตรามหาวิทยาลัยบูรพา.png"
-                            alt="ตรามหาวิทยาลัยบูรพา"
-                            class="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full">
-                        <p class="text-secondary">หลักสูตรปริญญาตรี
-                            วิทยาศาสตรบัณฑิต
-                            สาขาเทคโนโลยีสารสนเทศเพื่ออุตสาหกรรมดิจิทัล
-                            คณะวิทยาการสารสนเทศ มหาวิทยาลัยบูรพา</p>
-                    </div>
+                <div class="bg-white p-6 rounded-lg text-center shadow-md">
+                    <img src="/src/component/about/ตราโรงเรียน นมร สกส.jpg" alt="ตราโรงเรียน นมร สกส" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-purple-900 mb-2">Secondary Education</h3>
+                    <p class="text-purple-600">โรงเรียนนวมินทราชินูทิศ สวนกุหลาบวิทยาลัย สมุทรปราการ</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg text-center shadow-md">
+                    <img src="/src/component/about/ตรามหาวิทยาลัยบูรพา.png" alt="ตรามหาวิทยาลัยบูรพา" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-purple-900 mb-2">Current</h3>
+                    <p class="text-purple-600">หลักสูตรปริญญาตรี วิทยาศาสตรบัณฑิต สาขาเทคโนโลยีสารสนเทศเพื่ออุตสาหกรรมดิจิทัล คณะวิทยาการสารสนเทศ มหาวิทยาลัยบูรพา</p>
                 </div>
             </div>
-        </section>
-
-    </body>
+        </div>
+    </section>
+</body>
 </html>
