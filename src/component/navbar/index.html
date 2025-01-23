@@ -65,5 +65,36 @@
             <a href="#contact"
                 class="py-3 px-6 text-lg font-medium hover:bg-secondary transition duration-300">Contact</a>
         </div>
+
+        <!-- Mobile Menu Toggle Script -->
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuToggle.addEventListener('click', (event) => {
+                event.stopPropagation(); // ป้องกันการคลิกไปยังเอกสารด้านนอก
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // ปิดเมนูเมื่อกดลิงก์
+            mobileMenu.addEventListener('click', (event) => {
+                if (event.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // ปิดเมนูเมื่อคลิกนอกเมนู
+            document.addEventListener('click', (event) => {
+                if (
+                    !mobileMenu.classList.contains('hidden') &&
+                    !mobileMenu.contains(event.target) &&
+                    event.target !== mobileMenuToggle
+                ) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        </script>
     </body>
 </html>
