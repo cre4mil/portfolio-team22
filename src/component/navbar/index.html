@@ -5,25 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#433878',
-                        'secondary': '#7E60BF',
-                        'accent1': '#E4B1F0',
-                        'accent2': '#FFE1FF'
-                    }
-                }
-            }
-        }
-        </script>
     </head>
     <body
-        class="bg-accent2 text-primary font-sans leading-normal tracking-normal">
+        class=" text-purple-900 font-sans leading-normal tracking-normal">
         <!-- Navigation -->
-        <nav class="bg-primary text-white fixed w-full z-20 top-0">
+        <nav class="bg-purple-900 text-white fixed w-full z-20 top-0">
             <div
                 class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
                 <div class="text-2xl font-bold">
@@ -31,13 +17,13 @@
                 </div>
                 <div class="hidden md:flex space-x-6">
                     <a href="#home"
-                        class="font-semibold hover:text-accent1 transition duration-300">Home</a>
+                        class="font-semibold hover:text-pink-300 transition duration-300">Home</a>
                     <a href="#about"
-                        class="font-semibold hover:text-accent1 transition duration-300">About</a>
+                        class="font-semibold hover:text-pink-300 transition duration-300">About</a>
                     <a href="#projects"
-                        class="font-semibold hover:text-accent1 transition duration-300">Projects</a>
+                        class="font-semibold hover:text-pink-300 transition duration-300">Projects</a>
                     <a href="#contact"
-                        class="font-semibold hover:text-accent1 transition duration-300">Contact</a>
+                        class="font-semibold hover:text-pink-300 transition duration-300">Contact</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-toggle"
@@ -56,15 +42,15 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="fixed top-0 left-0 w-full bg-primary text-white z-10 hidden flex-col divide-y divide-accent1">
+            class="fixed top-0 left-0 w-full bg-purple-900 text-white z-10 hidden flex-col divide-y divide-pink-300">
             <a href="#home"
-                class="py-3 px-6 text-lg font-medium hover:bg-secondary transition duration-300">Home</a>
+                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">Home</a>
             <a href="#about"
-                class="py-3 px-6 text-lg font-medium hover:bg-secondary transition duration-300">About</a>
+                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">About</a>
             <a href="#projects"
-                class="py-3 px-6 text-lg font-medium hover:bg-secondary transition duration-300">Projects</a>
+                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">Projects</a>
             <a href="#contact"
-                class="py-3 px-6 text-lg font-medium hover:bg-secondary transition duration-300">Contact</a>
+                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">Contact</a>
         </div>
 
         <!-- Mobile Menu Toggle Script -->
