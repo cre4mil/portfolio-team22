@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer with Horizontal Quick Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-[#7E60BF] to-[#E4B1F0] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h5 class="text-lg font-semibold mb-2">Contact Info</h5>
+                    <p class="mb-1">169 Long Had Bangsaen Road, Saensuk Subdistrict, Muang District, Chonburi Province
+                        20131</p>
+                    <p>Email : contact@jcbf.co.th</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-2">Follow Us</h5>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <!-- Added title attribute to provide discernible text for screen readers -->
+                        <a href="#" class="hover:text-gray-300" title="Follow us on Facebook">
+                            <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <!-- Add other social media links here -->
+                    </div>
+                </div>
+                <!-- Add other footer sections here -->
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
