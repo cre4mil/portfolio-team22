@@ -1,95 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body
-        class=" text-purple-900 font-sans leading-normal tracking-normal">
+    <body class="text-purple-900 font-sans leading-normal tracking-normal">
         <!-- Navigation -->
-        <nav class="bg-purple-900 text-white fixed w-full z-20 top-0">
+        <nav
+            class="bg-purple-900 text-white fixed w-full z-20 top-0 start-0 border-b border-purple-800">
             <div
                 class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-                <div class="text-2xl font-bold">
-                    Portfolio
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="/src/index.html"
-                        class="font-semibold hover:text-pink-300 transition duration-300">Home</a>
-                    <a href="/src/about.html"
-                        class="font-semibold hover:text-pink-300 transition duration-300">About</a>
-                    <a href="/src/projects.html"
-                        class="font-semibold hover:text-pink-300 transition duration-300">Projects</a>
-                    <a href="/src/contact.html"
-                        class="font-semibold hover:text-pink-300 transition duration-300">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-toggle"
-                        class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round"
+                <a href="/src/index.html" class="flex items-center space-x-3">
+                    <span class="text-2xl font-bold">Portfolio</span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0">
+                    <button
+                        data-collapse-toggle="navbar-sticky"
+                        type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        aria-controls="navbar-sticky"
+                        aria-expanded="false">
+                        <span class="sr-only">open main menu</span>
+                        <svg
+                            class="w-5 h-5"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 17 14">
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                                 stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
+                                d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
+                </div>
+                <div
+                    class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ml-auto"
+                    id="navbar-sticky">
+                    <ul
+                        class="flex flex-col p-4 md:p-0 mt-4 text-lg font-medium border border-purple-800 rounded-lg bg-purple-900 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-purple-900">
+                        <li>
+                            <a
+                                href="/src/index.html"
+                                class="block py-2 px-3 text-white rounded hover:bg-purple-800 md:hover:bg-transparent md:hover:text-pink-300 md:p-0"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/src/about.html"
+                                class="block py-2 px-3 text-white rounded hover:bg-purple-800 md:hover:bg-transparent md:hover:text-pink-300 md:p-0">About</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/src/projects.html"
+                                class="block py-2 px-3 text-white rounded hover:bg-purple-800 md:hover:bg-transparent md:hover:text-pink-300 md:p-0">Projects</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/src/contact.html"
+                                class="block py-2 px-3 text-white rounded hover:bg-purple-800 md:hover:bg-transparent md:hover:text-pink-300 md:p-0">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="fixed top-0 left-0 w-full bg-purple-900 text-white z-10 hidden flex-col divide-y divide-pink-300">
-            <a href="/src/index.html"
-                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">Home</a>
-            <a href="/src/about.html"
-                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">About</a>
-            <a href="/src/projects.html"
-                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">Projects</a>
-            <a href="/src/contact.html"
-                class="py-3 px-6 text-lg font-medium hover:bg-purple-600 transition duration-300">Contact</a>
-        </div>
-
-        <!-- Mobile Menu Toggle Script -->
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-                const mobileMenu = document.getElementById('mobile-menu');
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.querySelector(
+          "[data-collapse-toggle='navbar-sticky']"
+        );
+        const menu = document.getElementById("navbar-sticky");
 
-                if (mobileMenuToggle && mobileMenu) {
-                    // Toggle mobile menu on button click
-                    mobileMenuToggle.addEventListener('click', (event) => {
-                        event.stopPropagation();
-                        mobileMenu.classList.toggle('hidden');
-                        mobileMenu.classList.toggle('flex');
-                    });
-
-                    // Close mobile menu when a link is clicked
-                    mobileMenu.addEventListener('click', (event) => {
-                        if (event.target.tagName === 'A') {
-                            mobileMenu.classList.add('hidden');
-                            mobileMenu.classList.remove('flex');
-                        }
-                    });
-
-                    // Close mobile menu when clicking outside
-                    document.addEventListener('click', (event) => {
-                        if (
-                            !mobileMenu.classList.contains('hidden') &&
-                            !mobileMenu.contains(event.target) &&
-                            event.target !== mobileMenuToggle
-                        ) {
-                            mobileMenu.classList.add('hidden');
-                            mobileMenu.classList.remove('flex');
-                        }
-                    });
-                } else {
-                    console.error('Mobile menu elements not found!');
-                }
-            });
-        </script>
+        toggleButton.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      });
+    </script>
     </body>
 </html>
