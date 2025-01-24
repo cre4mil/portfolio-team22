@@ -3,47 +3,74 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
+        <title>Worawat Philuekna - Portfolio</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     </head>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-image {
+            animation: float 4s ease-in-out infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #E4B1F0, #FFFFFF);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
     <body
         class="bg-[#FFE1FF] text-[#433878] font-sans leading-normal tracking-normal">
-        <!-- Hero Section -->
+        <!-- Hero Section with Enhanced Interactivity -->
         <section id="home"
-            class="pt-24 pb-16 px-4 bg-gradient-to-br from-[#433878] to-[#7E60BF] text-white">
+            class="pt-24 pb-20 px-8 bg-gradient-to-br from-[#433878] to-[#7E60BF] text-white relative overflow-hidden w-full">
+            <!-- Subtle Background Shapes -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div
+                    class="absolute top-10 left-10 w-32 h-32 bg-[#E4B1F0] rounded-full mix-blend-overlay"></div>
+                <div
+                    class="absolute bottom-10 right-10 w-48 h-48 bg-[#433878] rounded-full mix-blend-overlay"></div>
+            </div>
+
             <div
-                class="max-w-4xl mx-auto flex flex-col md:flex-row items-center">
+                class="max-w-4xl mx-auto flex flex-col md:flex-row items-center relative z-10">
                 <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Worawat
+                    <h1
+                        class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Worawat
                         Philuekna</h1>
-                    <div class="text-x mb-4">
-                        <p>ประธานสาขาเทคโนโลยีสารสนเทศ รุ่นที่ 24</p>
-                        <p>รองนายกสโมสรนิสิตคณะวิทยาการสารสนเทศ ปีการศึกษา
-                            2567</p>
-                        <p>หัวหน้าฝ่ายคทากรคณะวิทยาการสารสนเทศ</p>
+                    <div class="text-base mb-6 space-y-2">
+                        <p class="animate-pulse">ประธานสาขาเทคโนโลยีสารสนเทศ
+                            รุ่นที่ 24</p>
+                        <p
+                            class="animate-pulse">รองนายกสโมสรนิสิตคณะวิทยาการสารสนเทศ
+                            ปีการศึกษา 2567</p>
+                        <p
+                            class="animate-pulse">หัวหน้าฝ่ายคทากรคณะวิทยาการสารสนเทศ</p>
                     </div>
 
-                    <!-- Social Media Links -->
-                    <div class="flex justify-center md:justify-start space-x-4">
+                    <!-- Enhanced Social Media Links -->
+                    <div class="flex justify-center md:justify-start space-x-5">
                         <a href="https://www.instagram.com/filmmii___/"
                             target="_blank"
-                            class="text-white hover:text-[#E4B1F0] transition duration-300">
+                            class="text-white hover:scale-125 transform transition duration-300 hover:rotate-6 hover:text-[#E4B1F0]">
                             <i data-feather="instagram" class="w-8 h-8"></i>
                         </a>
                         <a href="https://www.facebook.com/filmmii.worawat"
                             target="_blank"
-                            class="text-white hover:text-[#E4B1F0] transition duration-300">
+                            class="text-white hover:scale-125 transform transition duration-300 hover:rotate-6 hover:text-[#E4B1F0]">
                             <i data-feather="facebook" class="w-8 h-8"></i>
                         </a>
                         <a href="https://www.youtube.com/c/filmmii___"
                             target="_blank"
-                            class="text-white hover:text-[#E4B1F0] transition duration-300">
+                            class="text-white hover:scale-125 transform transition duration-300 hover:rotate-6 hover:text-[#E4B1F0]">
                             <i data-feather="youtube" class="w-8 h-8"></i>
                         </a>
                         <a href="mailto:Filmmiistodio@gmail.com"
-                            class="text-white hover:text-[#E4B1F0] transition duration-300">
+                            class="text-white hover:scale-125 transform transition duration-300 hover:rotate-6 hover:text-[#E4B1F0]">
                             <i data-feather="mail" class="w-8 h-8"></i>
                         </a>
                     </div>
@@ -51,7 +78,7 @@
                 <div class="md:w-1/2 flex justify-center">
                     <img src="/src/component/hero/filmmi.jpg"
                         alt="Profile Picture"
-                        class="rounded-full w-64 h-64 object-cover border-4 border-[#E4B1F0] shadow-lg">
+                        class="rounded-full w-64 h-64 object-cover border-4 border-[#E4B1F0] shadow-lg floating-image hover:shadow-2xl transition duration-300">
                 </div>
             </div>
         </section>
