@@ -6,10 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="js\main.js"></script>
     </head>
     <body>
         <div id="navbar"></div>
         <div id="hero"></div>
+        <div id="skills"></div>
         <div id="footer"></div>
         <script>
 // ฟังก์ชนสำหรับโหลด component
@@ -26,6 +28,7 @@ console.error(`Error loading ${url}:`, error);
 document.addEventListener('DOMContentLoaded', () => {
 loadComponent('component/navbar/index.html', 'navbar');
 loadComponent('component/hero/index.html', 'hero');
+loadComponent('component/hero/index.html', 'skills');
 loadComponent('component/footer/index.html', 'footer');
 });
 </script>
