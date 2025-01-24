@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="js\main.js"></script>
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <div id="about"></div>
+        <div id="footer"></div>
+        <script>
+            async function loadComponent(url, targetId) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${url}: ${response.statusText}`);
+                    }
+                    const html = await response.text();
+                    document.getElementById(targetId).innerHTML = html;
+
+                    // Replace Feather Icons after loading the component
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+                    console.log(`Loaded ${url} into ${targetId}`);
+                } catch (error) {
+                    console.error(`Error loading ${url}:`, error);
+                }
+            }
+      document.addEventListener("DOMContentLoaded", async () => {
+      await  loadComponent("./component/navbar/index.html", "navbar");
+      await  loadComponent("./component/about/index.html", "about");
+      await  loadComponent("./component/footer/index.html", "footer");
+      });
+    </script>
+    </body>
+</html>
