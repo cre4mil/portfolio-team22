@@ -12,23 +12,33 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <!-- Placeholder for components -->
     <div id="navbar"></div>
     <div id="contact"></div>
     <div id="footer"></div>
+
+    <!-- Script to load components -->
     <script>
       async function loadComponent(url, targetId) {
-      try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`Failed to load ${url}: ${response.statusText}`);
+          }
+          const html = await response.text();
+          document.getElementById(targetId).innerHTML = html;
+
+          // Replace Feather Icons after loading the component
+          if (typeof feather !== 'undefined') {
+            feather.replace();
+          }
+          console.log(`Loaded ${url} into ${targetId}`);
+        } catch (error) {
+          console.error(`Error loading ${url}:`, error);
+        }
       }
-      const html = await response.text();
-      document.getElementById(targetId).innerHTML = html;
-      console.log(`Loaded ${url} into ${targetId}`);
-      } catch (error) { 
-      console.error(`Error loading ${url}:`, error);
-      }
-      }
+
+      // โหลดทุก components
       document.addEventListener('DOMContentLoaded', () => {
         loadComponent('component/navbar/index.html', 'navbar');
         loadComponent('component/contact/index.html', 'contact');

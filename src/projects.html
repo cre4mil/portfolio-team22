@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,25 +12,38 @@
         <script src="js/main.js" defer></script>
     </head>
     <body>
+        <!-- Placeholder for components -->
         <div id="navbar"></div>
         <div id="projects"></div>
         <div id="footer"></div>
-        <script>
-async function loadComponent(url, targetId) {
-try {
-const response = await fetch(url);
-const html = await response.text();
-document.getElementById(targetId).innerHTML = html;
-} catch (error) {
-console.error(`Error loading ${url}:`, error);
-}
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-loadComponent('component/navbar/index.html', 'navbar');
-loadComponent('component/projects/index.html', 'projects');
-loadComponent('component/footer/index.html', 'footer');
-});
-</script>
+        <!-- Script to load components -->
+        <script>
+            async function loadComponent(url, targetId) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${url}: ${response.statusText}`);
+                    }
+                    const html = await response.text();
+                    document.getElementById(targetId).innerHTML = html;
+
+                    // Replace Feather Icons after loading the component
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+                    console.log(`Loaded ${url} into ${targetId}`);
+                } catch (error) {
+                    console.error(`Error loading ${url}:`, error);
+                }
+            }
+
+            // โหลดทุก components
+            document.addEventListener('DOMContentLoaded', () => {
+                loadComponent('component/navbar/index.html', 'navbar');
+                loadComponent('component/projects/index.html', 'projects');
+                loadComponent('component/footer/index.html', 'footer');
+            });
+        </script>
     </body>
 </html>

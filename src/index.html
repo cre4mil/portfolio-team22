@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,28 +12,40 @@
         <script src="js/main.js" defer></script>
     </head>
     <body>
+        <!-- Placeholder for components -->
         <div id="navbar"></div>
         <div id="hero"></div>
         <div id="skills"></div>
         <div id="footer"></div>
+
+        <!-- Script to load components -->
         <script>
-// ฟังก์ชนสำหรับโหลด component
-async function loadComponent(url, targetId) {
-try {
-const response = await fetch(url);
-const html = await response.text();
-document.getElementById(targetId).innerHTML = html;
-} catch (error) {
-console.error(`Error loading ${url}:`, error);
-}
-}
-// โหลดทุก components
-document.addEventListener('DOMContentLoaded', () => {
-loadComponent('component/navbar/index.html', 'navbar');
-loadComponent('component/hero/index.html', 'hero');
-loadComponent('component/skills/index.html', 'skills');
-loadComponent('component/footer/index.html', 'footer');
-});
-</script>
+            // ฟังก์ชันสำหรับโหลด component
+            async function loadComponent(url, targetId) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${url}: ${response.statusText}`);
+                    }
+                    const html = await response.text();
+                    document.getElementById(targetId).innerHTML = html;
+
+                    // Replace Feather Icons after loading the component
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+                } catch (error) {
+                    console.error(`Error loading ${url}:`, error);
+                }
+            }
+
+            // โหลดทุก components
+            document.addEventListener('DOMContentLoaded', () => {
+                loadComponent('component/navbar/index.html', 'navbar');
+                loadComponent('component/hero/index.html', 'hero');
+                loadComponent('component/skills/index.html', 'skills');
+                loadComponent('component/footer/index.html', 'footer');
+            });
+        </script>
     </body>
 </html>
