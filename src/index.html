@@ -38,11 +38,11 @@
             }
 
             // โหลดทุก components
-            document.addEventListener('DOMContentLoaded', () => {
-                loadComponent('./component/navbar/index.html', 'navbar');
-                loadComponent('./component/hero/index.html', 'hero');
-                loadComponent('./component/skills/index.html', 'skills');
-                loadComponent('./component/footer/index.html', 'footer');
+            document.addEventListener('DOMContentLoaded', async  () => {
+               await loadComponent('./component/navbar/index.html', 'navbar');
+               await loadComponent('./component/hero/index.html', 'hero');
+               await loadComponent('./component/skills/index.html', 'skills');
+               await loadComponent('./component/footer/index.html', 'footer');
             });
         </script>
     </body>

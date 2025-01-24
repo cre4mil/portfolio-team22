@@ -39,10 +39,10 @@
       }
 
       // โหลดทุก components
-      document.addEventListener('DOMContentLoaded', () => {
-        loadComponent('./component/navbar/index.html', 'navbar');
-        loadComponent('./component/contact/index.html', 'contact');
-        loadComponent('./component/footer/index.html', 'footer');
+      document.addEventListener('DOMContentLoaded', async () => {
+      await  loadComponent('./component/navbar/index.html', 'navbar');
+      await  loadComponent('./component/contact/index.html', 'contact');
+      await  loadComponent('./component/footer/index.html', 'footer');
       });
     </script>
   </body>
