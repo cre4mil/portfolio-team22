@@ -8,11 +8,9 @@
         <!-- Load Feather Icons -->
         <script
             src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-        <!-- Link to external JavaScript file with defer -->
         <script src="js/main.js" defer></script>
     </head>
     <body>
-        <!-- Placeholder for components -->
         <div id="navbar"></div>
         <div id="hero"></div>
         <div id="skills"></div>
@@ -20,7 +18,6 @@
 
         <!-- Script to load components -->
         <script>
-            // ฟังก์ชันสำหรับโหลด component
             async function loadComponent(url, targetId) {
                 try {
                     const response = await fetch(url);
@@ -34,6 +31,7 @@
                     if (typeof feather !== 'undefined') {
                         feather.replace();
                     }
+                    console.log(`Loaded ${url} into ${targetId}`);
                 } catch (error) {
                     console.error(`Error loading ${url}:`, error);
                 }
@@ -41,10 +39,10 @@
 
             // โหลดทุก components
             document.addEventListener('DOMContentLoaded', () => {
-                loadComponent('component/navbar/index.html', 'navbar');
-                loadComponent('component/hero/index.html', 'hero');
-                loadComponent('component/skills/index.html', 'skills');
-                loadComponent('component/footer/index.html', 'footer');
+                loadComponent('./component/navbar/index.html', 'navbar');
+                loadComponent('./component/hero/index.html', 'hero');
+                loadComponent('./component/skills/index.html', 'skills');
+                loadComponent('./component/footer/index.html', 'footer');
             });
         </script>
     </body>

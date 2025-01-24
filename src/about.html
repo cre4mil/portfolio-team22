@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Load Feather Icons -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-        <!-- Link to external JavaScript file with defer -->
-        <script src="js/main.js" defer></script>
+        <script src="js\main.js"></script>
     </head>
     <body>
-        <!-- Placeholder for components -->
         <div id="navbar"></div>
         <div id="about"></div>
-        <div id="skills"></div>
         <div id="footer"></div>
-
-        <!-- Script to load components -->
         <script>
             async function loadComponent(url, targetId) {
                 try {
@@ -38,14 +30,11 @@
                     console.error(`Error loading ${url}:`, error);
                 }
             }
-
-            // โหลดทุก components
-            document.addEventListener('DOMContentLoaded', () => {
-                loadComponent('component/navbar/index.html', 'navbar');
-                loadComponent('component/about/index.html', 'about');
-                loadComponent('component/skills/index.html', 'skills');
-                loadComponent('component/footer/index.html', 'footer');
-            });
-        </script>
+      document.addEventListener("DOMContentLoaded", () => {
+        loadComponent("./component/navbar/index.html", "navbar");
+        loadComponent("./component/about/index.html", "about");
+        loadComponent("./component/footer/index.html", "footer");
+      });
+    </script>
     </body>
 </html>
